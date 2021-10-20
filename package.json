@@ -1,11 +1,14 @@
 {
-  "name": "vuesax",
-  "version": "3.12.2",
-  "description": "Framework Components for Vue js",
+  "name": "educatena-vuesax",
+  "version": "3.12.3",
+  "description": "Educatena's version of Vuesax with some bug fixes.",
   "license": "MIT",
-  "author": "ldrovira <luisdanielrovira8@gmail.com>",
-  "homepage": "https://lusaxweb.github.io/vuesax/#/",
-  "repository": "lusaxweb/vuesax",
+  "author": "Educatena <tic@educatena.com.br>",
+  "homepage": "https://github.com/educatena/vuesax",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/educatena/vuesax.git"
+  },
   "bugs": {
     "url": "https://github.com/lusaxweb/vuesax/issues"
   },
@@ -22,7 +25,8 @@
     "ui",
     "frontend",
     "responsive",
-    "stylus"
+    "stylus",
+    "educatena"
   ],
   "main": "dist/vuesax.common.js",
   "unpkg": "dist/vuesax.umd.min.js",
@@ -86,5 +90,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "directories": {
+    "doc": "docs"
+  }
 }

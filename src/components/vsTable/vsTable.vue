@@ -281,7 +281,7 @@ export default {
 
       let items = []
       dataBase.forEach((item, index) => {
-        if(index >= min && index < max) {
+        if(this.total || index >= min && index < max) {
           items.push(item)
         }
       })

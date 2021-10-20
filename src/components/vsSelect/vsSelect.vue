@@ -109,6 +109,7 @@
 
 <script>
 import utils from "../../utils";
+import html2text from "../../utils/html.js";
 export default {
   name: "VsSelect",
   props: {
@@ -401,10 +402,11 @@ export default {
             }
           });
         });
-        this.$refs.inputselect.value = optionsValues.toString();
+        const value = optionsValues.toString();
+        this.$refs.inputselect.value = html2text(value)
       } else {
         if (this.$refs.inputselect) {
-          this.$refs.inputselect.value = this.valuex;
+          this.$refs.inputselect.value = html2text(this.valuex);
         }
       }
     },

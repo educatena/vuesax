@@ -268,6 +268,15 @@ export default {
           this.isActive = true
         }
         let btn = this.$refs.btn
+
+        /**
+         * The code below this if deals with the button animation
+         * after it is clicked.
+         * If the button for some reason during the current tick 
+         * is not available anymore, there's no need to run the code.
+         */
+        if (!btn) return
+
         let xEvent = event.offsetX
         let yEvent = event.offsetY
         let radio = btn.clientWidth * 3

@@ -180,6 +180,10 @@ export default {
     width: {
       default: null,
       type: String
+    },
+    preventClear: {
+      default: false,
+      type: Boolean
     }
   },
   data: () => ({
@@ -447,7 +451,7 @@ export default {
 
       if (!closestx) {
         this.closeOptions();
-        if (this.autocomplete) {
+        if (this.autocomplete && !this.preventClear) {
           this.filterItems("");
         }
         this.changeValue();

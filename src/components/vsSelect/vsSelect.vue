@@ -406,8 +406,13 @@ export default {
           });
         });
         const value = optionsValues.toString();
-        this.$refs.inputselect.value = utils.html2text(value)
+
+        if (utils.isEmpty(value) && this.preventClear) return
+
+        this.$refs.inputselect.value = utils.html2text(value);
       } else {
+        if (utils.isEmpty(this.valuex) && this.preventClear) return
+
         if (this.$refs.inputselect) {
           this.$refs.inputselect.value = utils.html2text(this.valuex);
         }
@@ -451,7 +456,7 @@ export default {
 
       if (!closestx) {
         this.closeOptions();
-        if (this.autocomplete && !this.preventClear) {
+        if (this.autocomplete) {
           this.filterItems("");
         }
         this.changeValue();

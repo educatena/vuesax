@@ -40,5 +40,17 @@ export default {
     const tag = document.createElement('div')
     tag.innerHTML = html
     return tag.innerText
+  },
+  isEmpty(value) {
+    value = typeof value === 'string' ? value.trim() : value
+    return (
+      value === null || // The value is null ?
+      value === '' || // The value is an empty string ?
+      value === undefined || // The value is undefined ?
+      (
+        Array.isArray(value) && // Or is the value an array and...
+        value.length === 0 // Its length is zero, contains no elements.
+      )
+    )
   }
 }
